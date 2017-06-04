@@ -19,9 +19,9 @@
         <link href="css/style.css" rel="stylesheet">
         <link href="css/icons.css" rel="stylesheet">
         <link href="css/generics.css" rel="stylesheet">
+        <link href="css/loader.css" rel="stylesheet">
     </head>
-    <body id="skin-blur-blue">
-
+    <body id="skin-blur-blue" onload="myFunction()">
         <header id="header" class="media">
             <a href="" id="menu-toggle"></a>
             <a class="logo pull-left" href="index.html">Naviera Pro</a>
@@ -162,8 +162,10 @@
             </aside>
 
             <!-- Content -->
+            <div id="loader"></div>
+            <div class="loader"></div>
             <section id="content" class="container">
-
+                <div style="display:none;" id="Cargando" class="animate-bottom">
                 <!-- Breadcrumb -->
                 <ol class="breadcrumb hidden-xs">
                     <li><a href="index.html">Dashboard</a></li>
@@ -171,28 +173,33 @@
                     <li>Calendario</li>
                 </ol>
 
-                <h4 class="page-title">Generacion de liquidación</h4>
+                <h4 class="page-title">Generacion de liquidacion</h4>
+                <div class="block-area">
+                    <div class="alert alert-success alert-dismissable fade in alert-icon">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        Se ha generado la liquidación para los siguientes registros.
+                        <i class="icon">&#61845;</i>
+                    </div>
+                </div>
 
-                <!-- Basic with panel-->
-                <div class="block-area" id="basic">
-                    <h3 class="block-title">Generar liquidación de navieras</h3>
-                    <div class="tile p-15">
-                        <form role="form" action="liquidacion-step-2.html">
-                            <div class="row">
-                                <div class="col-md-4 m-b-15">
-                                    <p>Antes de generar la liquidiación,  asegurese que los montos a liquidar
-                                        se encuentren en estado pagado para evitar errores.</p>
-                                </div>
-                            </div>
-                            <a href="liquidacion-step-2.html" class="btn" id="liquidar">Liquidación</a>
-                        </form>
+                <!-- Jumbotron -->
+                <div class="block-area" id="jumbotron">
+                    <div class="jumbotron tile-light">
+                        <div class="container">
+                            <h1>Éxito!</h1>
+                            <p>Su liquidación ha sido procesada con éxito para continuar con el proceso
+                                es necesario que genere los asientos contables.</p>
+                            <p><a class="btn btn-alt btn-lg">Generar asiento contable de liquidación</a></p>
+                        </div>
                     </div>
                 </div>
 
                 <hr class="whiter" />
+
                 <!-- Table Condensed -->
                 <div class="block-area" id="tableCondensed">
-                    <h3 class="block-title">Pagos por liquidar</h3>
+                    <h3 class="block-title">Pagos Liquidados</h3>
+                    <p> Estos son los pagos que formaran parte de los asientos contables que esta por generar</p>
                     <div class="table-responsive overflow">
                         <table class="table tile table-condensed">
                             <thead>
@@ -262,12 +269,11 @@
                         </table>
                     </div>
                 </div>
-                    </div>
-                </div>
-            </section>
-            <br/><br/>
+            </div>
+            </div>
         </section>
-
+        <br/><br/>
+        </section>
         <!-- Javascript Libraries -->
         <!-- jQuery -->
         <script src="js/jquery.min.js"></script> <!-- jQuery Library -->
@@ -288,5 +294,17 @@
 
         <!-- All JS functions -->
         <script src="js/functions.js"></script>
+        <script>
+            var cargar_pagina;
+
+            function myFunction() {
+                cargar_pagina = setTimeout(showPage, 3000);
+            }
+
+            function showPage() {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("Cargando").style.display = "block";
+            }
+        </script>
     </body>
 </html>
