@@ -1,14 +1,4 @@
 $(document).ready(function(){
-
-    /*
-    Loader
-     */
-    (function(){
-        var myVar;
-        $( "#liquidar" ).click(function() {
-            loader(this);
-        });
-    })();
     /* --------------------------------------------------------
 	Components
     -----------------------------------------------------------*/

@@ -11,6 +11,7 @@
         <title>Naviera Pro</title>
 
         <!-- CSS -->
+        <link rel="shortcut icon" type="image/png" href="img/boat.png"/>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/animate.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -21,7 +22,7 @@
         <link href="css/generics.css" rel="stylesheet">
         <link href="css/loader.css" rel="stylesheet">
     </head>
-    <body id="skin-blur-blue" onload="myFunction()">
+    <body id="skin-blur-blue" onload="Loader()">
         <header id="header" class="media">
             <a href="" id="menu-toggle"></a>
             <a class="logo pull-left" href="index.html">Naviera Pro</a>
@@ -163,7 +164,6 @@
 
             <!-- Content -->
             <div id="loader"></div>
-            <div class="loader"></div>
             <section id="content" class="container">
                 <div style="display:none;" id="Cargando" class="animate-bottom">
                 <!-- Breadcrumb -->
@@ -177,7 +177,7 @@
                 <div class="block-area">
                     <div class="alert alert-success alert-dismissable fade in alert-icon">
                         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        Se ha generado la liquidación para los siguientes registros.
+                        Se ha generado la liquidación para los siguientes 9 registros.
                         <i class="icon">&#61845;</i>
                     </div>
                 </div>
@@ -187,7 +187,7 @@
                     <div class="jumbotron tile-light">
                         <div class="container">
                             <h1>Éxito!</h1>
-                            <p>Su liquidación ha sido procesada con éxito para continuar con el proceso
+                            <p>Su liquidación ha sido procesada con éxito, para continuar con el proceso
                                 es necesario que genere los asientos contables.</p>
                             <p><a class="btn btn-alt btn-lg">Generar asiento contable de liquidación</a></p>
                         </div>
@@ -198,7 +198,7 @@
 
                 <!-- Table Condensed -->
                 <div class="block-area" id="tableCondensed">
-                    <h3 class="block-title">Pagos Liquidados</h3>
+                    <h3 class="block-title">Pagos cancelados</h3>
                     <p> Estos son los pagos que formaran parte de los asientos contables que esta por generar</p>
                     <div class="table-responsive overflow">
                         <table class="table tile table-condensed">
@@ -215,55 +215,55 @@
                                 <td>Maersk</td>
                                 <td>Comida</td>
                                 <td>$ 34,000 </td>
-                                <td>Pagado </td>
+                                <td>Cancelado </td>
                             </tr>
                             <tr>
                                 <td>Evergreen</td>
                                 <td>Comida</td>
                                 <td>$ 20,000 </td>
-                                <td>Pagado </td>
+                                <td>Cancelado </td>
                             </tr>
                             <tr>
                                 <td>Cosco</td>
                                 <td>Comida</td>
                                 <td>$ 21,000 </td>
-                                <td>Pagado </td>
+                                <td>Cancelado </td>
                             </tr>
                             <tr>
                                 <td>CMA</td>
                                 <td>Comida</td>
                                 <td>$ 75,000 </td>
-                                <td>Pagado </td>
+                                <td>Cancelado </td>
                             </tr>
                             <tr>
                                 <td>MSC</td>
                                 <td>Comida</td>
                                 <td>$ 37,000 </td>
-                                <td>Pagado </td>
+                                <td>Cancelado </td>
                             </tr>
                             <tr>
                                 <td>Maersk</td>
                                 <td>Entretenimiento</td>
                                 <td>$ 54,000 </td>
-                                <td>Pagado </td>
+                                <td>Cancelado </td>
                             </tr>
                             <tr>
                                 <td>Evergreen</td>
                                 <td>Entretenimiento</td>
                                 <td>$ 98,000 </td>
-                                <td>Pagado </td>
+                                <td>Cancelado </td>
                             </tr>
                             <tr>
                                 <td>MSC</td>
                                 <td>Entretenimiento</td>
                                 <td>$ 76,000 </td>
-                                <td>Pagado </td>
+                                <td>Cancelado </td>
                             </tr>
                             <tr>
                                 <td>Cosco</td>
                                 <td>Entretenimiento</td>
                                 <td>$ 48,000 </td>
-                                <td>Pagado </td>
+                                <td>Cancelado </td>
                             </tr>
                             </tbody>
                         </table>
@@ -297,7 +297,7 @@
         <script>
             var cargar_pagina;
 
-            function myFunction() {
+            function Loader() {
                 cargar_pagina = setTimeout(showPage, 3000);
             }
 
