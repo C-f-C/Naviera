@@ -204,6 +204,7 @@
                         <table class="table tile table-condensed">
                             <thead>
                             <tr>
+                                <th>Fecha de corte</th>
                                 <th>Naviera</th>
                                 <th>Servicio</th>
                                 <th>Monto</th>
@@ -212,54 +213,63 @@
                             </thead>
                             <tbody>
                             <tr>
+                                <td class = "fecha"></td>
                                 <td>Maersk</td>
                                 <td>Comida</td>
                                 <td>$ 34,000 </td>
                                 <td>Cancelado </td>
                             </tr>
                             <tr>
+                                <td class = "fecha"></td>
                                 <td>Evergreen</td>
                                 <td>Comida</td>
                                 <td>$ 20,000 </td>
                                 <td>Cancelado </td>
                             </tr>
                             <tr>
+                                <td class = "fecha"></td>
                                 <td>Cosco</td>
                                 <td>Comida</td>
                                 <td>$ 21,000 </td>
                                 <td>Cancelado </td>
                             </tr>
                             <tr>
+                                <td class = "fecha"></td>
                                 <td>CMA</td>
                                 <td>Comida</td>
                                 <td>$ 75,000 </td>
                                 <td>Cancelado </td>
                             </tr>
                             <tr>
+                                <td class = "fecha"></td>
                                 <td>MSC</td>
                                 <td>Comida</td>
                                 <td>$ 37,000 </td>
                                 <td>Cancelado </td>
                             </tr>
                             <tr>
+                                <td class = "fecha"></td>
                                 <td>Maersk</td>
                                 <td>Entretenimiento</td>
                                 <td>$ 54,000 </td>
                                 <td>Cancelado </td>
                             </tr>
                             <tr>
+                                <td class = "fecha"></td>
                                 <td>Evergreen</td>
                                 <td>Entretenimiento</td>
                                 <td>$ 98,000 </td>
                                 <td>Cancelado </td>
                             </tr>
                             <tr>
+                                <td class = "fecha"></td>
                                 <td>MSC</td>
                                 <td>Entretenimiento</td>
                                 <td>$ 76,000 </td>
                                 <td>Cancelado </td>
                             </tr>
                             <tr>
+                                <td class = "fecha"></td>
                                 <td>Cosco</td>
                                 <td>Entretenimiento</td>
                                 <td>$ 48,000 </td>
@@ -295,8 +305,18 @@
         <!-- All JS functions -->
         <script src="js/functions.js"></script>
         <script>
-            var cargar_pagina;
+            var lunes = ObtenerLunes(new Date());
+            $('.fecha').html(lunes.toLocaleDateString("en-US"));
 
+
+            function ObtenerLunes(d) {
+                d = new Date(d);
+                var day = d.getDay(),
+                    diff = d.getDate() - day + (day == 0 ? -6:1); // adjust when day is sunday
+                return new Date(d.setDate(diff));
+            }
+        </script>
+        <script>
             function Loader() {
                 cargar_pagina = setTimeout(showPage, 3000);
             }
